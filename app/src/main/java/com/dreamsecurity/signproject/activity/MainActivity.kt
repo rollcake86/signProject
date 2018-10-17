@@ -1,8 +1,9 @@
-package com.dreamsecurity.signproject
+package com.dreamsecurity.signproject.activity
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import com.dreamsecurity.signproject.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

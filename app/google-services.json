@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "142338918807",
+    "firebase_url": "https://signproject-c0bc0.firebaseio.com",
+    "project_id": "signproject-c0bc0",
+    "storage_bucket": "signproject-c0bc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142338918807:android:bbb67a39a2098086",
+        "android_client_info": {
+          "package_name": "com.dreamsecurity.signproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142338918807-qmdqu5q1rc7jnv9ph12cjccl4tvutigt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dreamsecurity.signproject",
+            "certificate_hash": "1e395b873726e26f4362be4ba504b498c7f3d628"
+          }
+        },
+        {
+          "client_id": "142338918807-n7ve7bv0o430jpink29dp7lnhhs645f5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy8W_LJRnejpDn-7O_McPhP6TIxAvLKC4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142338918807-n7ve7bv0o430jpink29dp7lnhhs645f5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
