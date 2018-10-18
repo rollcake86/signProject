@@ -12,6 +12,7 @@ import com.dreamsecurity.signproject.R
 import com.dreamsecurity.signproject.activity.view.HistoryListFragment
 import com.dreamsecurity.signproject.activity.view.MainListFragment
 import com.dreamsecurity.signproject.activity.view.SignFragment
+import com.dreamsecurity.signproject.activity.view.TextDialog
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.drawer_main_index.*
@@ -39,7 +40,15 @@ class MainIndexActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            val dialog  = TextDialog(this@MainIndexActivity , getString(R.string.app_name) , "종료 하시겠습니까?" , object : TextDialog.getReuslt{
+                override fun ok() {
+                    finish()
+                }
+                override fun no() {
+
+                }
+            })
+            dialog.show()
         }
     }
 
