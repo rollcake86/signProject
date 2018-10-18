@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.dreamsecurity.signproject.R;
+import com.rollcake.indi.indiplace.utils.AppkeyManager;
+
+import static com.dreamsecurity.signproject.AppApplication.FIRST_START;
 
 public class IntroActivity extends BaseActivity {
 
@@ -15,8 +18,16 @@ public class IntroActivity extends BaseActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(IntroActivity.this , LoginActivity.class));
-                finish();
+
+                if(AppkeyManager.Companion.getKey(IntroActivity.this , FIRST_START , true)){
+                    startActivity(new Intent(IntroActivity.this , HelpActivity.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(IntroActivity.this , LoginActivity.class));
+                    finish();
+                }
+
+
             }
         }, 2000);
 

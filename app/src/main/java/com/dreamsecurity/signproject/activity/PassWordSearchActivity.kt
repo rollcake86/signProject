@@ -2,8 +2,7 @@ package com.dreamsecurity.signproject.activity
 
 import android.os.Bundle
 import com.android.volley.Request
-import com.dreamsecurity.signproject.AppApplication.DOMAIN
-import com.dreamsecurity.signproject.AppApplication.EMAIL
+import com.dreamsecurity.signproject.AppApplication.*
 import com.dreamsecurity.signproject.BuildConfig
 import com.dreamsecurity.signproject.R
 import com.dreamsecurity.signproject.utils.ServerNetworking
@@ -30,9 +29,8 @@ class PassWordSearchActivity : BaseActivity() {
 
         mailSendBtn.setOnClickListener {
             val url = "/mail"
-
-            val key = arrayOf("email")
-            val value = arrayOf(email)
+            val key = arrayOf("email" , "check")
+            val value = arrayOf(email , FORGOT)
             ServerNetworking.sendToMobileServer(this, Request.Method.POST, DOMAIN + url, key, value, object : ServerNetworking.getResult {
                 override fun getResultText(text: String?) {
                     val result = JSONObject(text)

@@ -1,12 +1,14 @@
 package com.dreamsecurity.signproject.utils;
 
 import android.content.Context;
+import android.view.View;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,9 +42,6 @@ public class ServerNetworking {
                 }
             }
         }
-
-        Logs.e(TAG , url);
-
         JsonObjectRequest request = new JsonObjectRequest(method, url, param, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -54,8 +53,36 @@ public class ServerNetworking {
             public void onErrorResponse(VolleyError error) {
                 result.fail("서버 실행 실패");
             }
-        }) ;
+        });
+        request.setShouldCache(false);
+        Volley.newRequestQueue(context).add(request);
+    }
 
+    public static void sendToMobileServerWithLoading(Context context, final AVLoadingIndicatorView loadingIndicatorView, int method, String url, final String[] keys, final String[] values, final getResult result) throws JSONException {
+        loadingIndicatorView.show();
+        JSONObject param = new JSONObject();
+        if (keys != null) {
+            for (int i = 0; i < keys.length; i++) {
+                try {
+                    param.put(keys[i], values[i]);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        JsonObjectRequest request = new JsonObjectRequest(method, url, param, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Logs.e(TAG, "response : " + response);
+                loadingIndicatorView.hide();
+                result.getResultText(response.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                result.fail("서버 실행 실패");
+            }
+        });
         request.setShouldCache(false);
         Volley.newRequestQueue(context).add(request);
     }
