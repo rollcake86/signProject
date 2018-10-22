@@ -8,7 +8,7 @@ import android.view.View
 import com.dreamsecurity.signproject.R
 
 
-class HistoryListFragment : Fragment(){
+class HistoryListFragment : BaseFragment(){
 
     fun newInstance(): HistoryListFragment {
         return HistoryListFragment()

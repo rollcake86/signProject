@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.dreamsecurity.signproject.AppApplication;
@@ -38,6 +39,10 @@ public class BaseActivity extends AppCompatActivity {
 
     protected void showToast(String text){
         Toast.makeText(this , text , Toast.LENGTH_SHORT).show();
+    }
+
+    protected String getEditToString(EditText editText){
+        return editText.getText().toString().trim();
     }
 
 }

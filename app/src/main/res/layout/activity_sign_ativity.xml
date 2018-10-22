@@ -34,7 +34,7 @@
         android:hint="password 입력"
         android:inputType="textPassword"
         android:maxEms="15"
-        android:maxLength="1"
+        android:maxLines="1"
         android:minEms="6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:hint="password 재입력"
         android:inputType="textPassword"
         android:maxEms="15"
-        android:maxLength="1"
+        android:maxLines="1"
         android:minEms="6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +80,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="성함"
+        android:maxLines="1"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +98,7 @@
         android:ems="10"
         android:hint="생년월일"
         android:inputType="date"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameEdit" />
@@ -111,6 +113,7 @@
         android:layout_marginStart="8dp"
         android:hint="email 입력"
         android:layout_marginTop="16dp"
+        android:maxLines="1"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toStartOf="@+id/sendEmailBtn"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,4 +159,15 @@
         android:text="인증"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birthEdit" />
+
+    <Button
+        android:id="@+id/overlapBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        android:text="중복체크"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

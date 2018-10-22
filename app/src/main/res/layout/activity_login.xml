@@ -33,13 +33,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:hint="password 입력"
         android:inputType="textPassword"
         android:maxEms="15"
         android:maxLines="1"
         android:minEms="6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idEdit" />
 
@@ -103,4 +104,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/searchPwd"
         app:layout_constraintTop_toBottomOf="@+id/pwEdit" />
+
+    <CheckBox
+        android:id="@+id/pwsave"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="암호저장"
+        app:layout_constraintStart_toEndOf="@+id/pwEdit"
+        app:layout_constraintTop_toBottomOf="@+id/idEdit" />
+
 </android.support.constraint.ConstraintLayout>
